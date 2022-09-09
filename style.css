@@ -15,8 +15,8 @@
 .etch-box {
     display: flex;
     flex-wrap: wrap;
-    height: 850px;
-    width: 850px;
+    height: 500px;
+    width: 500px;
     background-color: white;
 }
 
@@ -26,8 +26,9 @@ h1 {
 
 
 .box {
-    height: 50px;
-    width: 50px;
-    border-color: aqua;
     background-color: blue;
+}
+
+.colored {
+    background-color: aqua;
 }
