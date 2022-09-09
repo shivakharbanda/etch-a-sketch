@@ -19,10 +19,16 @@ clearBtn.addEventListener("click", clearGrid);
 
 gridBtn = document.getElementById("grid");
 
+rainbowBtn = document.getElementById("rainbow");
+
+rainbowBtn.addEventListener("click", () => {
+    rainbowMode = true
+})
+
 gridBtn.addEventListener("click", (e) => {
     gridSize = prompt("Enter grid size");
     gridSize = Number(gridSize);
-    if (gridSize > 100) {
+    if (gridSize > 100 && gridSize < 0) {
         alert("invalid grid size. please enter a number between 1 and 100");
         gridSize = 16;
     }
@@ -30,7 +36,7 @@ gridBtn.addEventListener("click", (e) => {
     divMaker(Number(gridSize))
 
 
-})
+});
 
 function divMaker(num) {
     containHeight = 500;
@@ -51,10 +57,20 @@ function divMaker(num) {
     let boxes = document.querySelectorAll('.box');
 
     boxes.forEach(box => box.addEventListener("mouseover", (e) => {
+        let colorGrid = "none";
+        if (rainbowMode == false) {
+            colorGrid = "aqua";
+        } else if (rainbowMode == true) {
+            let x = getRandom();
+            let y = getRandom();
+            let z = getRandom();
+            colorGrid = `rgb(${x},${y}, ${z})`;
+        }
         boxy = e.target;
         let qury = `${boxy.id}`;
         boxy = document.getElementById(qury);
-        boxy.style.backgroundColor = "aqua";
+        boxy.style.backgroundColor = colorGrid;
+        console.log(rainbowMode);
         //console.log(boxy);
     }));
 }
@@ -80,8 +96,11 @@ function checkSize(size) {
 
 
 
-function randomColor() {
-    let x = 0;
-    let y = 0;
-    let z = 0;
+function getRandom() {
+    let min = 0;
+    let max = 255;
+
+    return Math.floor(Math.random() * (max - min) + min)
 }
+
+console.log(getRandom())
