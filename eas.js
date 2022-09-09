@@ -28,7 +28,7 @@ rainbowBtn.addEventListener("click", () => {
 gridBtn.addEventListener("click", (e) => {
     gridSize = prompt("Enter grid size");
     gridSize = Number(gridSize);
-    if (gridSize > 100 && gridSize < 0) {
+    if (gridSize > 100 || gridSize < 1) {
         alert("invalid grid size. please enter a number between 1 and 100");
         gridSize = 16;
     }
