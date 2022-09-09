@@ -1,3 +1,6 @@
+body {
+    display: flex;
+}
 .container {
     display: flex;
     justify-content: center;
@@ -21,14 +24,34 @@
 }
 
 h1 {
-    padding-top: -50%;
+    padding-left: 250px;
 }
 
-
-.box {
-    background-color: blue;
-}
 
 .colored {
     background-color: aqua;
+}
+
+.element-2 {
+    display: flex;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-right: 50px;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    size: 25px;
+}
+
+.sample {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    align-self: center;
 }
