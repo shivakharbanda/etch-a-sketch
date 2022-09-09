@@ -23,6 +23,28 @@ rainbowBtn = document.getElementById("rainbow");
 
 rainbowBtn.addEventListener("click", () => {
     rainbowMode = true
+    rainBowBox = document.querySelector(".sample");
+    const img = document.createElement('img');
+    img.setAttribute("src", "images/rainbow.jpg");
+    img.style.height= "inherit";
+    img.style.width = "inherit";
+    kid = rainBowBox.firstChild;
+    if (kid != null) {
+        return;
+    }
+    rainBowBox.appendChild(img);
+})
+
+colorBtn = document.getElementById("color-mode");
+console.log(colorBtn)
+
+colorBtn.addEventListener("click", () => {
+    rainbowMode = false
+    colorBox = document.querySelector('.sample');
+    child = (colorBox.firstChild);
+    if (child != null) {
+        colorBox.removeChild(child);
+    }
 })
 
 gridBtn.addEventListener("click", (e) => {
@@ -104,3 +126,5 @@ function getRandom() {
 }
 
 console.log(getRandom())
+
+
